@@ -5,11 +5,20 @@ import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
 import classes from "./Burger.css";
 
 const Burger = (props) => {
-  const listIngredients = Object.keys(props.ingredients).map((igkey) => {
-    return [...Array(props.ingredients[igkey])].map((_, i) => {
-      return <BurgerIngredient key={igkey + i} type={igkey} />;
-    });
-  });
+  let listIngredients = Object.keys(props.ingredients)
+    .map((igkey) => {
+      return [...Array(props.ingredients[igkey])].map((_, i) => {
+        return <BurgerIngredient key={igkey + i} type={igkey} />;
+      });
+    })
+    .reduce((arr, el) => {
+      return arr.concat(el);
+    }, []);
+
+    if (listIngredients.length === 0){
+        listIngredients =  <p>Add ingredients</p>
+    }
+
   return (
     <div className={classes.Burger}>
       <BurgerIngredient type="bread-top" />
