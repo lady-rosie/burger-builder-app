@@ -1,3 +1,31 @@
-.Content{
-    margin-top: 30px;
+.Content {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media (min-width: 500px) and (min-height: 400px) {
+  .Content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+}
+@media (max-width: 600px) {
+  .Content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1000px) and (min-height: 700px) {
+  .Content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
 }

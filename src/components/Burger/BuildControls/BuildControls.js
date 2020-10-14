@@ -21,6 +21,12 @@ const BuildControls = (props) => (
         disable={props.disable[ingredient.type]}
       />
     ))}
+    <div className={classes.TotalPrice}>
+      <p>
+        Total: <strong>{props.price.toFixed(2)}$</strong>
+      </p>
+    </div>
+    <button className={classes.OrderButton}>ORDER NOW</button>
   </div>
 );
 
